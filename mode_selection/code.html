@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZEROday | Mode Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .neon-glow-blue:hover {
+            box-shadow: 0 0 32px rgba(0, 240, 255, 0.15);
+            border-color: #00F0FF;
+        }
+        .neon-glow-purple:hover {
+            box-shadow: 0 0 32px rgba(207, 92, 255, 0.15);
+            border-color: #cf5cff;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary": "#520071",
+                "primary": "#dbfcff",
+                "error": "#ffb4ab",
+                "primary-fixed": "#7df4ff",
+                "surface-container-low": "#1c1b1b",
+                "secondary-container": "#cf5cff",
+                "on-error": "#690005",
+                "secondary-fixed": "#f8d8ff",
+                "on-error-container": "#ffdad6",
+                "tertiary-fixed": "#e2e2e2",
+                "surface-variant": "#353534",
+                "surface-dim": "#131313",
+                "surface-container-high": "#2a2a2a",
+                "on-tertiary-fixed-variant": "#454747",
+                "on-primary-fixed": "#002022",
+                "primary-fixed-dim": "#00dbe9",
+                "on-secondary-fixed": "#320047",
+                "surface-tint": "#00dbe9",
+                "tertiary-container": "#d9d9d9",
+                "surface": "#131313",
+                "secondary": "#ecb2ff",
+                "secondary-fixed-dim": "#ecb2ff",
+                "inverse-primary": "#006970",
+                "on-secondary-fixed-variant": "#74009f",
+                "on-surface": "#e5e2e1",
+                "on-tertiary-fixed": "#1a1c1c",
+                "surface-container-highest": "#353534",
+                "inverse-surface": "#e5e2e1",
+                "on-primary-fixed-variant": "#004f54",
+                "on-primary-container": "#006970",
+                "on-primary": "#00363a",
+                "primary-container": "#00f0ff",
+                "tertiary": "#f5f5f5",
+                "surface-container": "#201f1f",
+                "surface-bright": "#3a3939",
+                "on-tertiary": "#2f3131",
+                "on-secondary-container": "#480063",
+                "tertiary-fixed-dim": "#c6c6c7",
+                "background": "#131313",
+                "on-background": "#e5e2e1",
+                "error-container": "#93000a",
+                "surface-container-lowest": "#0e0e0e",
+                "inverse-on-surface": "#313030",
+                "on-tertiary-container": "#5d5f5f",
+                "on-surface-variant": "#b9cacb",
+                "outline-variant": "#3b494b",
+                "outline": "#849495"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-desktop": "40px",
+                "stack-xl": "64px",
+                "margin-mobile": "16px",
+                "unit": "4px",
+                "stack-lg": "32px",
+                "gutter": "24px",
+                "stack-md": "16px",
+                "stack-sm": "8px",
+                "container-max": "1280px"
+            },
+            "fontFamily": {
+                "h1": ["Space Grotesk"],
+                "body-lg": ["Inter"],
+                "display": ["Space Grotesk"],
+                "code": ["Inter"],
+                "body-md": ["Inter"],
+                "h2": ["Space Grotesk"],
+                "label-caps": ["Space Grotesk"]
+            },
+            "fontSize": {
+                "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                "code": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "500"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopAppBar for Mobile/Tablets -->
+<header class="flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-md border-b border-[#1F1F1F] md:hidden">
+<div class="text-2xl font-black text-[#00F0FF] tracking-widest font-['Space_Grotesk'] uppercase">ZEROday</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00F0FF]">local_fire_department</span>
+<span class="material-symbols-outlined text-[#00F0FF]">account_circle</span>
+</div>
+</header>
+<!-- SideNavBar (The Anchor) -->
+<nav class="hidden md:flex flex-col h-screen fixed left-0 top-0 p-4 bg-[#141414] w-64 border-r border-[#1F1F1F] shadow-[10px_0_30px_rgba(0,240,255,0.03)] z-50">
+<div class="mb-8">
+<div class="text-xl font-black text-[#00F0FF] font-['Space_Grotesk']">ZEROday</div>
+<div class="text-[10px] font-bold text-gray-500 tracking-[0.2em] font-mono">RANK_ONE_MINDSET</div>
+</div>
+<div class="flex-grow">
+<!-- DASHBOARD -->
+<a class="text-gray-400 hover:text-white px-4 py-3 mb-2 flex items-center gap-3 transition-all font-mono text-xs font-bold hover:bg-[#1F1F1F]" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span>DASHBOARD</span>
+</a>
+<!-- PRACTICE (Active for Mode Selection) -->
+<a class="bg-[#00F0FF] text-black rounded-lg px-4 py-3 mb-2 flex items-center gap-3 font-mono text-xs font-bold translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span>PRACTICE</span>
+</a>
+<!-- ANALYTICS -->
+<a class="text-gray-400 hover:text-white px-4 py-3 mb-2 flex items-center gap-3 transition-all font-mono text-xs font-bold hover:bg-[#1F1F1F]" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span>ANALYTICS</span>
+</a>
+<!-- SETTINGS -->
+<a class="text-gray-400 hover:text-white px-4 py-3 mb-2 flex items-center gap-3 transition-all font-mono text-xs font-bold hover:bg-[#1F1F1F]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>SETTINGS</span>
+</a>
+</div>
+<button class="bg-[#00F0FF] text-black font-bold py-3 px-4 rounded-lg text-xs tracking-wider mb-6 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="play_arrow">play_arrow</span>
+            START_MOCK_TEST
+        </button>
+<div class="border-t border-[#1F1F1F] pt-4">
+<a class="text-gray-400 hover:text-white px-4 py-3 flex items-center gap-3 transition-all font-mono text-xs font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>SUPPORT</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 min-h-screen p-6 md:p-12 pb-24 md:pb-12">
+<!-- Header Section -->
+<div class="max-w-7xl mx-auto mb-12">
+<h1 class="font-h1 text-h1 text-[#00F0FF] mb-2 uppercase tracking-tighter">SELECT_MODE</h1>
+<p class="font-body-md text-body-md text-gray-500 max-w-2xl">
+                Choose your training protocol. High-intensity algorithms and curated datasets optimized for peak academic performance.
+            </p>
+</div>
+<!-- Mode Selection Cards (Bento/Asymmetric Layout) -->
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Card 1: PYQs -->
+<div class="md:col-span-8 bg-[#141414] border border-[#1F1F1F] rounded-[24px] p-8 relative overflow-hidden group transition-all duration-300 neon-glow-blue flex flex-col md:flex-row gap-8">
+<div class="flex-grow relative z-10">
+<div class="inline-block bg-[#00F0FF]/10 text-[#00F0FF] px-3 py-1 rounded-full text-[10px] font-bold tracking-widest mb-6 font-mono">ARCHIVE_ACCESS</div>
+<h2 class="font-h2 text-h2 mb-4 text-white group-hover:text-[#00F0FF] transition-colors">PYQs</h2>
+<p class="font-body-md text-body-md text-gray-400 mb-8 max-w-md">Practice previous year papers. A comprehensive database of authentic examination scenarios from the last 15 years.</p>
+<button class="bg-[#00F0FF] text-black font-label-caps text-label-caps px-8 py-4 rounded-none uppercase font-black hover:scale-105 transition-transform">
+                        Select Year
+                    </button>
+</div>
+<div class="flex-shrink-0 flex items-center justify-center bg-[#1F1F1F] rounded-2xl w-full md:w-64 h-48 md:h-auto overflow-hidden relative">
+<img alt="Old books and papers" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity" data-alt="close-up of stacked vintage academic papers and leather-bound books in a dark, atmospheric study with cool cyan lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMaqMehQIhrb0n-YpCCxJh2VOGPtGWu4MbKx19YaAvJh4QSrjhyJS1nCwhr7U8591PO6FZWxHizf2TuZW-1ZJIlX8cHk9N2UMP13eJdtTMtj8f3pJBvKK7-3oBy2dC1mMCRGgw4GHNl7kHjLJw5g8wG1VaocoxK9bmEawAuQs639KcJxit8aSJuBxvCzTfSqGOX2AQQua9pEr2x2OP0oFGIkn8royyPyYuWDKh_mnRotEaoXmiDuUccojbSzaA5m3CQSsDGcGc0eNj"/>
+<span class="material-symbols-outlined text-6xl text-[#00F0FF] relative z-10 opacity-80" data-icon="history">history</span>
+</div>
+</div>
+<!-- Card 2: Booklets -->
+<div class="md:col-span-4 bg-[#141414] border border-[#1F1F1F] rounded-[24px] p-8 relative overflow-hidden group transition-all duration-300 neon-glow-purple flex flex-col justify-between">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl text-[#cf5cff]" data-icon="menu_book">menu_book</span>
+<div class="bg-[#cf5cff]/10 text-[#cf5cff] px-3 py-1 rounded-full text-[10px] font-bold tracking-widest font-mono">MODULAR</div>
+</div>
+<h2 class="font-h2 text-h2 mb-4 text-white group-hover:text-[#cf5cff] transition-colors">Booklets</h2>
+<p class="font-body-md text-body-md text-gray-400 mb-6">Topic-wise practice questions designed to eliminate weak spots in your preparation matrix.</p>
+</div>
+<div class="relative z-10">
+<div class="w-full bg-[#1F1F1F] h-1 mb-6 overflow-hidden rounded-full">
+<div class="bg-[#cf5cff] h-full w-2/3 shadow-[0_0_8px_#cf5cff]"></div>
+</div>
+<button class="w-full border border-[#cf5cff] text-[#cf5cff] font-label-caps text-label-caps py-4 rounded-none uppercase font-black hover:bg-[#cf5cff] hover:text-black transition-all">
+                        Choose Booklet
+                    </button>
+</div>
+</div>
+<!-- Card 3: Mock Test -->
+<div class="md:col-span-12 bg-[#141414] border border-[#1F1F1F] rounded-[24px] p-8 md:p-12 relative overflow-hidden group transition-all duration-300 border-l-4 border-l-[#00F0FF] neon-glow-blue">
+<div class="flex flex-col md:flex-row items-center gap-12 relative z-10">
+<div class="flex-grow">
+<div class="inline-flex items-center gap-2 bg-[#00F0FF]/10 text-[#00F0FF] px-3 py-1 rounded-full text-[10px] font-bold tracking-widest mb-6 font-mono">
+<span class="material-symbols-outlined text-[14px]" data-icon="bolt">bolt</span>
+                            LIVE_SIMULATION
+                        </div>
+<h2 class="font-display text-h1 md:text-display mb-4 text-white uppercase italic tracking-tighter">Mock Test</h2>
+<p class="font-body-lg text-body-lg text-gray-400 mb-8 max-w-xl">Full length and custom exams with real-time analytics. Experience the pressure, master the clock, conquer the outcome.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-[#00F0FF] text-black font-label-caps text-label-caps px-10 py-5 rounded-none uppercase font-black hover:scale-105 transition-transform flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+                                Go to Tests
+                            </button>
+<button class="border border-white/10 text-white font-label-caps text-label-caps px-10 py-5 rounded-none uppercase font-black hover:bg-white/5 transition-all">
+                                Custom Setup
+                            </button>
+</div>
+</div>
+<div class="w-full md:w-1/3 aspect-square max-w-[300px] relative">
+<!-- Abstract Digital Timer Visual -->
+<div class="absolute inset-0 border-2 border-[#00F0FF]/20 rounded-full animate-pulse"></div>
+<div class="absolute inset-4 border border-[#00F0FF]/10 rounded-full"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center">
+<span class="font-display text-4xl text-[#00F0FF] block font-black">03:00</span>
+<span class="font-mono text-[10px] text-gray-500 uppercase tracking-widest">REMAINING</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Background visual element -->
+<div class="absolute right-0 top-0 bottom-0 w-1/2 opacity-10 pointer-events-none">
+<img alt="Circuit board macro" class="w-full h-full object-cover" data-alt="extreme close-up of a high-tech microprocessor and circuit board with glowing neon blue data lines in a dark environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0P_NizvgjHdDGPjF0oXTpUsqjiZzSoluQ3rZFZgXhmTYF6UZ48EAbB_qiDT89a4zH3t6Xlz1-UGKxxDx8Lis-FsHJopOt5gwyN-fPTFM6GtYMWDTKn9c6C3S6bQmJj05-RUEGEQaBy5IPRZi-QfpTQEHXEvXqIF7MXyG9NHJGV3z1H1xhQooal9rnOVCyBf0JyLyP0hrg59ouKu-dWN8pVI3fNULJMYq1Hj9UE6CS0WJaCQmySAjsa0SmNQuJKzNUKu04oYpPgYS8"/>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-[#141414] md:hidden border-t border-[#1F1F1F] rounded-t-2xl shadow-[0_-8px_32px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-gray-500" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tighter">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00F0FF] bg-[#00F0FF]/10 rounded-xl px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tighter">MODES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tighter">STATS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tighter">PROFILE</span>
+</a>
+</nav>
+</body></html>
