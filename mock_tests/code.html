@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#520071",
+                        "primary": "#dbfcff",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#7df4ff",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-container": "#cf5cff",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#f8d8ff",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-variant": "#353534",
+                        "surface-dim": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-fixed": "#002022",
+                        "primary-fixed-dim": "#00dbe9",
+                        "on-secondary-fixed": "#320047",
+                        "surface-tint": "#00dbe9",
+                        "tertiary-container": "#d9d9d9",
+                        "surface": "#131313",
+                        "secondary": "#ecb2ff",
+                        "secondary-fixed-dim": "#ecb2ff",
+                        "inverse-primary": "#006970",
+                        "on-secondary-fixed-variant": "#74009f",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#353534",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-fixed-variant": "#004f54",
+                        "on-primary-container": "#006970",
+                        "on-primary": "#00363a",
+                        "primary-container": "#00f0ff",
+                        "tertiary": "#f5f5f5",
+                        "surface-container": "#201f1f",
+                        "surface-bright": "#3a3939",
+                        "on-tertiary": "#2f3131",
+                        "on-secondary-container": "#480063",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "background": "#131313",
+                        "on-background": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary-container": "#5d5f5f",
+                        "on-surface-variant": "#b9cacb",
+                        "outline-variant": "#3b494b",
+                        "outline": "#849495"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "stack-xl": "64px",
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "stack-lg": "32px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "display": ["Space Grotesk"],
+                        "code": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h2": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "code": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid #1F1F1F;
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #00F0FF;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="font-body-md bg-[#0A0A0A]">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen fixed left-0 top-0 p-4 bg-[#141414] w-64 border-r border-[#1F1F1F] shadow-[10px_0_30px_rgba(0,240,255,0.03)] z-50">
+<div class="text-xl font-black text-[#00F0FF] mb-8 font-h1 tracking-widest uppercase">ZEROday</div>
+<div class="flex-1 space-y-2">
+<a class="text-gray-400 hover:text-white px-4 py-3 flex items-center gap-3 transition-all font-mono text-xs font-bold hover:bg-[#1F1F1F]" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+                DASHBOARD
+            </a>
+<a class="bg-[#00F0FF] text-black rounded-lg px-4 py-3 flex items-center gap-3 transition-all font-mono text-xs font-bold scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+                PRACTICE
+            </a>
+<a class="text-gray-400 hover:text-white px-4 py-3 flex items-center gap-3 transition-all font-mono text-xs font-bold hover:bg-[#1F1F1F]" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+                ANALYTICS
+            </a>
+<a class="text-gray-400 hover:text-white px-4 py-3 flex items-center gap-3 transition-all font-mono text-xs font-bold hover:bg-[#1F1F1F]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                SETTINGS
+            </a>
+</div>
+<div class="pt-4 border-t border-[#1F1F1F] mt-auto">
+<a class="text-gray-400 hover:text-white px-4 py-3 flex items-center gap-3 transition-all font-mono text-xs font-bold hover:bg-[#1F1F1F]" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+                SUPPORT
+            </a>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 py-4 sticky top-0 z-40 bg-[#0A0A0A]/80 backdrop-blur-md border-b border-[#1F1F1F] md:pl-72">
+<div class="font-h1 text-2xl font-black text-[#00F0FF] tracking-widest uppercase md:hidden">ZEROday</div>
+<div class="hidden md:block">
+<h1 class="font-h1 text-h2 text-primary uppercase">Mock Test Engine</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-primary-container text-sm" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-caps text-on-surface">14 DAY STREAK</span>
+</div>
+<span class="material-symbols-outlined text-primary-container cursor-pointer" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 p-6 md:p-10 min-h-screen">
+<div class="max-w-container-max mx-auto space-y-10">
+<!-- Hero Selection Area -->
+<div class="space-y-4">
+<p class="font-label-caps text-primary tracking-[0.2em] uppercase">SYSTEM_STATE: READY_FOR_SIMULATION</p>
+<h2 class="font-display text-display text-on-surface leading-tight">CHOOSE YOUR <span class="text-primary">BATTLEGROUND</span></h2>
+</div>
+<div class="bento-grid">
+<!-- Section 1: Create Custom Test (Asymmetric Layout) -->
+<div class="col-span-12 lg:col-span-7 space-y-6">
+<div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4">
+<span class="font-mono text-[10px] text-primary/40">CONFIG_ID: CT_992</span>
+</div>
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+</div>
+<div>
+<h3 class="font-h2 text-h2 text-on-surface uppercase">Create Custom Test</h3>
+<p class="text-on-surface-variant font-body-md">Precision training tailored to your weakness.</p>
+</div>
+</div>
+<form class="space-y-8">
+<!-- Subject Selection -->
+<div class="space-y-3">
+<label class="font-label-caps text-on-surface-variant uppercase">Subject Selection</label>
+<div class="grid grid-cols-3 gap-3">
+<button class="py-3 px-4 rounded-xl border border-primary text-black bg-primary font-bold text-sm tracking-wide transition-all active:scale-95" type="button">PHYSICS</button>
+<button class="py-3 px-4 rounded-xl border border-outline text-on-surface hover:border-primary transition-all text-sm tracking-wide font-medium" type="button">CHEMISTRY</button>
+<button class="py-3 px-4 rounded-xl border border-outline text-on-surface hover:border-primary transition-all text-sm tracking-wide font-medium" type="button">MATHEMATICS</button>
+</div>
+</div>
+<!-- Chapters Bento -->
+<div class="space-y-3">
+<label class="font-label-caps text-on-surface-variant uppercase">Chapter Targeting</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-48 overflow-y-auto pr-2 custom-scrollbar">
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-lowest border border-outline-variant cursor-pointer hover:bg-surface-container-low transition-colors">
+<input checked="" class="rounded border-outline bg-transparent text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface">Electrostatics</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-lowest border border-outline-variant cursor-pointer hover:bg-surface-container-low transition-colors">
+<input checked="" class="rounded border-outline bg-transparent text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface">Current Electricity</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-lowest border border-outline-variant cursor-pointer hover:bg-surface-container-low transition-colors">
+<input class="rounded border-outline bg-transparent text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface">Magnetism</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-lowest border border-outline-variant cursor-pointer hover:bg-surface-container-low transition-colors">
+<input class="rounded border-outline bg-transparent text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface">EMI &amp; AC</span>
+</label>
+</div>
+</div>
+<!-- Sliders -->
+<div class="grid md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<label class="font-label-caps text-on-surface-variant uppercase">Question Count</label>
+<span class="font-mono text-primary font-bold">45</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer" max="90" min="10" type="range" value="45"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<label class="font-label-caps text-on-surface-variant uppercase">Duration (Min)</label>
+<span class="font-mono text-primary font-bold">180</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer" max="300" min="30" step="30" type="range" value="180"/>
+</div>
+</div>
+<button class="w-full py-5 bg-primary text-black font-h2 uppercase tracking-[0.15em] rounded-2xl neon-glow-primary hover:scale-[1.02] active:scale-95 transition-all">
+                                START_MOCK_TEST
+                            </button>
+</form>
+</div>
+</div>
+<!-- Section 2: Full Tests (Vertical List) -->
+<div class="col-span-12 lg:col-span-5 space-y-6">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-h2 text-h2 text-on-surface uppercase flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="layers">layers</span>
+                                Full Tests
+                            </h3>
+<span class="font-mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">CURATED</span>
+</div>
+<div class="space-y-4">
+<!-- Test Card 1 -->
+<div class="bg-[#141414] border border-[#1F1F1F] rounded-2xl p-5 hover:border-primary/50 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label-caps text-[10px] bg-error/10 text-error px-2 py-0.5 rounded-full mb-2 inline-block">HARD_LEVEL</span>
+<h4 class="font-h2 text-body-lg text-on-surface">JEE Advanced: Full Paper 01</h4>
+</div>
+<div class="text-right">
+<div class="font-mono text-xs text-on-surface-variant uppercase">3.0 HOURS</div>
+<div class="font-mono text-xs text-primary">180 MARKS</div>
+</div>
+</div>
+<div class="flex gap-4 items-center mb-6">
+<div class="flex -space-x-2">
+<img alt="student profile" class="w-6 h-6 rounded-full border-2 border-[#141414]" data-alt="portrait of a focused student in a modern workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5e-kiTXY8ULbVH36VzxTksFnsz74hUlMsADlgumO411m8az3QXEW8SQuU-UT5cypp4R8owp9ChCD7j1V_-D9bmYCLS88xj4lDgGYvigCpqpF08Yn28DqOXaTS0SoA75H7sRo6jWXsQ-sgojjMuPJaHVtjpqry1LB2eUaEfoX8H5H6ZDxaQzbh5w_s00mnokpy2mzGMgnc8EXJB8iD0jMnmEA0D46bRKGBvkvKxjZRPsN5VBpL0HNFa8c6eSB8MvP9rgr4AhtgVmED"/>
+<img alt="student profile" class="w-6 h-6 rounded-full border-2 border-[#141414]" data-alt="portrait of a serious male student with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoRiWUm8_N_ccZl3XW0vLfAyKg2J38JG4T7_cGFS_BsMaGyfRhhhRpFA6reaC6KRB5OBXWa9-xP7OoR9O9KNews19y2KUHPcInN0VtStINICD9VD7QiNjeKtvTqS5qFIK6-NdZPkW6dR74Ga1-8tYsaAIVxbw4-uyhqHTjmuI-A_WILrt0MDUGCSEAQlDJscTOPffUkRTyF0Z23vGS8R5HCqJoRxkumlOyYSx79PSA5pqv0GKXE2eb8VSvAegKXgNZe7-_Aj4cT0vv"/>
+<div class="w-6 h-6 rounded-full border-2 border-[#141414] bg-surface-container flex items-center justify-center text-[8px] font-bold">+1.2k</div>
+</div>
+<span class="text-[10px] font-mono text-on-surface-variant uppercase">Enrolled Recently</span>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-black transition-all flex items-center justify-center gap-2">
+                                    START NOW
+                                    <span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span>
+</button>
+</div>
+<!-- Test Card 2 -->
+<div class="bg-[#141414] border border-[#1F1F1F] rounded-2xl p-5 hover:border-primary/50 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label-caps text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full mb-2 inline-block">PYQ_2023</span>
+<h4 class="font-h2 text-body-lg text-on-surface">JEE Main: Morning Session Jan</h4>
+</div>
+<div class="text-right">
+<div class="font-mono text-xs text-on-surface-variant uppercase">3.0 HOURS</div>
+<div class="font-mono text-xs text-primary">300 MARKS</div>
+</div>
+</div>
+<div class="flex gap-4 items-center mb-6">
+<div class="flex -space-x-2">
+<img alt="student profile" class="w-6 h-6 rounded-full border-2 border-[#141414]" data-alt="professional portrait of a young woman with a confident expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwxS-r9hViCXrcDtrSJVOclwNCNlEDvnZpNqZGDdGXKc8OrsMvI6xFC_r69psWwxyPZSZb-gdCaX4aAn_IpuVW3d17wZUpvKJjB144IcEdojifyD0eqv8OPMX6yTqYh5CFT-1HyffomwUJS3ferVpTPilrhxKELFa5bBn8zRJjQ2nZScM8aj_X4d6PrL7JJx0uNWDsXmmAIfqOVtLtHw43HmCBnlKoSCz7i88aAB6k7SMsvXc_X-gINpRmq0Tj9F_E1nrtbC0RDNVQ"/>
+<img alt="student profile" class="w-6 h-6 rounded-full border-2 border-[#141414]" data-alt="close up of a young man smiling softly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHA0GM4fu6p6IiCLIQwCgI-xlt6cuY5N0QqCRze5AL3J-U8mnvoBcUupiAlCUkAcBlrlgmV-EXK7v9kFvPvHDo6cKTt1WmsuDBNDvffJjYSeJ82RTvp3httaTu6V1lta8qRWD6CDOFJdbhj1mqOcTwDmVwbHY7yCZBsNWkJZ5Q3AOq4wboiDXJQ297q8LefGKLvFE08hp2HZYoAT6wdrCn7z7hrNN2pS-gTVSx6sS_aKum3lDZNz_FyWuaXjQXbGf7MkMjP1rsFHb9"/>
+<div class="w-6 h-6 rounded-full border-2 border-[#141414] bg-surface-container flex items-center justify-center text-[8px] font-bold">+4.5k</div>
+</div>
+<span class="text-[10px] font-mono text-on-surface-variant uppercase">Enrolled Recently</span>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-black transition-all flex items-center justify-center gap-2">
+                                    START NOW
+                                    <span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span>
+</button>
+</div>
+<!-- Test Card 3 -->
+<div class="bg-[#141414] border border-[#1F1F1F] rounded-2xl p-5 hover:border-primary/50 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label-caps text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded-full mb-2 inline-block">MOCK_ELITE</span>
+<h4 class="font-h2 text-body-lg text-on-surface">National Ranker Challenge</h4>
+</div>
+<div class="text-right">
+<div class="font-mono text-xs text-on-surface-variant uppercase">3.0 HOURS</div>
+<div class="font-mono text-xs text-primary">360 MARKS</div>
+</div>
+</div>
+<div class="flex gap-4 items-center mb-6">
+<div class="flex -space-x-2">
+<img alt="student profile" class="w-6 h-6 rounded-full border-2 border-[#141414]" data-alt="close up of a woman with neutral expression in soft studio light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0PXeGpzm1sOtqgbdVt40m2FF3Won0T8qI01Gd6GRmL9Wb09IizeMPEUiCH3ekC-0Z0c7cIG4aCR47e_C8xqBTd_sZLMgi66mGLHqjyHF8uiJ9Tvy4YcS6sfYjRiX-Mx7sh7aAXL85P_QZqOrNdBMDGJ9DJWOYXNPqEWwh3qC_JA-L3gjBmo58jeB4ETQcQZhADdQhWiwSSeduqcSLlXfn7nJ2NE9cc9BFH52Sn3izq-RlH_mccGCBR8_gU1q9RnVDQLP9zpIKqOmb"/>
+<div class="w-6 h-6 rounded-full border-2 border-[#141414] bg-surface-container flex items-center justify-center text-[8px] font-bold">+800</div>
+</div>
+<span class="text-[10px] font-mono text-on-surface-variant uppercase">Enrolled Recently</span>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-black transition-all flex items-center justify-center gap-2">
+                                    START NOW
+                                    <span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Overlay / Performance Pulse -->
+<div class="glass-panel p-6 rounded-3xl grid grid-cols-2 md:grid-cols-4 gap-8 border-l-4 border-l-primary">
+<div class="space-y-1">
+<p class="font-label-caps text-on-surface-variant text-[10px] uppercase">Simulation Count</p>
+<p class="font-h1 text-h2 text-primary">124</p>
+</div>
+<div class="space-y-1">
+<p class="font-label-caps text-on-surface-variant text-[10px] uppercase">Avg Accuracy</p>
+<p class="font-h1 text-h2 text-on-surface">82<span class="text-sm font-mono">%</span></p>
+</div>
+<div class="space-y-1">
+<p class="font-label-caps text-on-surface-variant text-[10px] uppercase">Focus Duration</p>
+<p class="font-h1 text-h2 text-on-surface">342<span class="text-sm font-mono">H</span></p>
+</div>
+<div class="space-y-1">
+<p class="font-label-caps text-on-surface-variant text-[10px] uppercase">Global Percentile</p>
+<p class="font-h1 text-h2 text-secondary">99.8</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-[#141414] md:hidden rounded-t-2xl shadow-[0_-8px_32px_rgba(0,0,0,0.5)] border-t border-[#1F1F1F]">
+<a class="flex flex-col items-center justify-center text-gray-500 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tighter uppercase">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00F0FF] bg-[#00F0FF]/10 rounded-xl px-4 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tighter uppercase">MODES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tighter uppercase">STATS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-tighter uppercase">PROFILE</span>
+</a>
+</nav>
+</body></html>
